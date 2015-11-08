@@ -3,8 +3,6 @@ class WelcomeController < ApplicationController
   end
 
   def show
-  	@q = params[:id]
-  	@hits = Tag.friendly.find(@q)
-
+  	@hit = Tag.friendly.find(params[:id])
   end
 end

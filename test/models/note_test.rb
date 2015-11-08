@@ -1,22 +1,18 @@
 # == Schema Information
 #
-# Table name: tags
+# Table name: notes
 #
 #  id         :integer          not null, primary key
-#  name       :string
+#  title      :string
+#  user_id    :integer
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
-#  slug       :string
-#  user_id    :integer
-#
-# Indexes
-#
-#  index_tags_on_slug  (slug) UNIQUE
+#  tag_id     :integer
 #
 
 require 'test_helper'
 
-class TagTest < ActiveSupport::TestCase
+class NoteTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end

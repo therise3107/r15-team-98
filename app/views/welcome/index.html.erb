@@ -5,29 +5,26 @@
 <div class="well">
   A <code>Google-like</code> instant-search based on <code>AlgoliaSearch JS Client</code> + <code>Hogan</code> example.
 </div>
-
-<div class="m-center">
-  <input name="email" placeholder="Search" id="user_email" autocomplete="off" spellcheck="false" class="instant-search-form" />
-  <div class="search-terms">
-    Try
-    <a href="javascript:void(0)">John</a>,
-    <a href="javascript:void(0)">Jonn</a>,
-    <a href="javascript:void(0)">s row</a>,
-    <a href="javascript:void(0)">roeb</a>
+ <div class="row">
+<form class="col s12">
+   <div class="row">
+    <div class="input-field col s12">
+      <input placeholder="Placeholder" id="user_name" type="text" class="validate">
+      <label for="user_name">First Name</label>
+      <div id="hits" class="collection">
+      </div>
+</div>
   </div>
-</div>
+  </form>
+ </div>   
 
-<div id="hits">
-</div>
+
 
 <script type="text/javascript">
   $(document).ready(function() {
     var index = new AlgoliaSearch('AAHPH6RMMW', 'ca7cddacfe022b6d988443bce51483d4').initIndex('<%= Tag.index_name %>');
     var hitTemplate = '<div class="hit-instant-search">' +
-      '<div class="company">{{{_highlightResult.company.value}}}</div>' +
-      '<div class="name"><a href="/show/{{{name}}}">{{{_highlightResult.name.value}}}</a></div>' +
-      '<div class="created_at">{{{created_at}}}</div>' +
-      '<div class="email"><a href="mailto:{{{_highlightResult.email.value}}}">{{{_highlightResult.email.value}}}</a></div>' +
+      '<a class="collection-item" href="/show/{{{name}}}">{{{_highlightResult.name.value}}}</a>'  +
     '</div>';
     var hitTemplateCompiled = Hogan.compile(hitTemplate);
     function search(v) {
@@ -44,7 +41,7 @@
         }
       }, { hitsPerPage: 20 });
     }
-    $('input#user_email').change(function() {
+    $('input#user_name').change(function() {
       search($(this).val());
     }).keyup(function(e) {
       if (e.which == 27) {
@@ -58,7 +55,7 @@
       $(this).attr("placeholder", "Search");
     }).focus();
     $('.search-terms a').click(function(e) {
-      $("input#user_email").val($(this).text()).change().focus();
+      $("input#user_name").val($(this).text()).change().focus();
     });
     search('');
   });
