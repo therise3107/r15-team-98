@@ -15,6 +15,8 @@
 #
 
 class Tag < ActiveRecord::Base
+	before_create :small_words
+	
 	include AlgoliaSearch
 	extend FriendlyId
 	friendly_id :slug_candidates, use: :slugged
@@ -31,5 +33,12 @@ class Tag < ActiveRecord::Base
 	end
 
 	has_many :notes 
+	has_many :users, through: :notes
+
+	
+
+	def small_words
+		self.name.downcase!
+	end
 
 end

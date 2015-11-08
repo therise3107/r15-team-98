@@ -1,0 +1,7 @@
+<%= @hit.name %>
+<%= @hit.notes.count %>
+
+<%@hit.notes.each do |note| %>
+	<%= note.title %>
+	<%= note.user.username %>
+<% end %>

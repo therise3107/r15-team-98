@@ -10,7 +10,7 @@
    <div class="row">
     <div class="input-field col s12">
       <input placeholder="Placeholder" id="user_name" type="text" class="validate">
-      <label for="user_name">First Name</label>
+      <label for="user_name">Hey lets get started!</label>
       <div id="hits" class="collection">
       </div>
 </div>
@@ -24,7 +24,7 @@
   $(document).ready(function() {
     var index = new AlgoliaSearch('AAHPH6RMMW', 'ca7cddacfe022b6d988443bce51483d4').initIndex('<%= Tag.index_name %>');
     var hitTemplate = '<div class="hit-instant-search">' +
-      '<a class="collection-item" href="/show/{{{name}}}">{{{_highlightResult.name.value}}}</a>'  +
+      '<a class="collection-item" href="/tag/{{{name}}}">{{{_highlightResult.name.value}}}</a>'  +
     '</div>';
     var hitTemplateCompiled = Hogan.compile(hitTemplate);
     function search(v) {
