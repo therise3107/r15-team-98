@@ -47,3 +47,10 @@ end
 
 gem 'puma'
 gem 'devise', '~> 3.5', '>= 3.5.2'
+gem "algoliasearch-rails"
+gem 'hogan_assets'
+gem 'high_voltage'
+gem 'simple_form'
+gem 'will_paginate'
+gem 'kaminari'
+gem 'friendly_id', '~> 5.1.0'
