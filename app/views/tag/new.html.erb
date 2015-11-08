@@ -1,0 +1,6 @@
+<div class="container">
+<%= form_for Tag.new, url: tag_index_path , method: 'post' do |f| %>
+	<%= f.label :name%>
+	<%= f.text_field :name ,placeholder: 'minimum 2 chars', class: "materialize-textarea",length: 10, required: true%>
+<% end %>
+</div>

@@ -32,6 +32,8 @@ class Tag < ActiveRecord::Base
 		]
 	end
 
+	validates_uniqueness_of :name, :message => "already present"
+	validates :name, length: { in: 1..20 }
 	has_many :notes 
 	has_many :users, through: :notes
 

@@ -5,6 +5,9 @@
 <%= link_to  current_user.username,destroy_user_session_path, :method=>'delete',
   class: "waves-effect waves-teal btn-flat right"
  %>
+ <%= link_to  "Add Tag", new_tag_path,
+  class: "waves-effect waves-teal btn-flat left"
+ %>
 <% else %>
 <%= link_to "sign in" ,new_user_session_path,class: "waves-effect waves-teal btn-flat right"%>
 <% end %>

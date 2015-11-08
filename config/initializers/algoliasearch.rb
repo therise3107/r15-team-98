@@ -1,6 +1,6 @@
 AlgoliaSearch.configuration = {
-  application_id: "AAHPH6RMMW",
-  api_key: "9c8466988c9dbfa55be33bc6dd76c3b5",
+  application_id: "UFVW660MPZ",
+  api_key: "aaffe2d4c532677f178576ab5cfe0bea",
 
   # uncomment to use backend pagination
   pagination_backend: :will_paginate
