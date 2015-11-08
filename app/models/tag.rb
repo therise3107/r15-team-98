@@ -41,6 +41,7 @@ class Tag < ActiveRecord::Base
 
 	def small_words
 		self.name.downcase!
+		self.gsub(/\s+/, "")
 	end
 
 end
