@@ -1,4 +1,11 @@
+<div class="container">
 <%= form_for([@tag,@note]) do |f| %>
 	<%= f.label :title %>
-	<%= f.text_field :title %>
+	<%= f.text_field :title , placeholder: 'minimum 6 chars', class: "materialize-textarea",length: 240, required: true%>
 <% end %>
+
+<div class= "center-align"style="padding-top: 140px;">
+
+  <a class="waves-effect waves-teal btn-flat" href="/tag/<%= @tag.name %>"><%= @tag.name %></a>
+</div>
+</div>

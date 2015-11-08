@@ -1,7 +1,29 @@
-<%= @hit.name %>
-<%= @hit.notes.count %>
-
-<%@hit.notes.each do |note| %>
-	<%= note.title %>
-	<%= note.user.username %>
+<div class="" style="padding: 10px;">
+<% if !current_user.tags.include?(@hit ) %>
+<a class="waves-effect waves-teal btn-flat right" href="/tag/<%= @hit.name %>/notes/new">New Note</a>
 <% end %>
+<a class="waves-effect waves-teal btn-flat left" href="/">Take me Back</a>
+</div>
+<div class="container">
+<div class="center-align">
+	<h1><%= @hit.name %></h1>
+	<p><%= @hit.notes.count %> notes</p>
+</div>
+
+
+
+<% @hit.notes.each do |note| %>
+	<div class="card-panel hoverable">
+	<div class="chip">
+	<%= image_tag note.user.gravatar_url, class: "circle responsive-img" %>
+  	<%= note.user.username %>
+  </div>
+
+	<i class="right"><%= local_time_ago note.created_at %></i>
+	<p class="flow-text">
+	<%= note.title %>
+	</p>
+     </div>    
+<% end %>
+
+

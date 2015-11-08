@@ -11,6 +11,9 @@
 #
 
 class Note < ActiveRecord::Base
+
+	validates :title, length: { in: 6..240 }
+
 	belongs_to :user
 	belongs_to :tag
 end

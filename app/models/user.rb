@@ -31,6 +31,9 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
   validates_uniqueness_of :username, :message => "already taken" 
 
+  include Gravtastic
+  gravtastic
+  
   has_many :notes 
   has_many :tags, through: :notes
 
