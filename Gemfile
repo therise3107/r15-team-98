@@ -6,7 +6,7 @@ gem 'rails', '4.2.1'
 # Use postgresql as the database for Active Record
 gem 'pg'
 # Use SCSS for stylesheets
-gem 'sass-rails', '~> 5.0'
+gem 'sass-rails', '~> 5.0', '>= 5.0.4'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 # Use CoffeeScript for .coffee assets and views
@@ -37,7 +37,7 @@ group :development, :test do
   gem 'byebug'
 
   # Access an IRB console on exception pages or by using <%= console %> in views
-  gem 'web-console', '~> 2.0'
+  gem 'web-console', '~> 2.2', '>= 2.2.1'
   gem 'annotate'
   gem 'better_errors'
   gem 'binding_of_caller'
@@ -48,7 +48,7 @@ end
 gem 'puma'
 gem 'devise', '~> 3.5', '>= 3.5.2'
 gem "algoliasearch-rails"
-gem 'hogan_assets'
+gem 'hogan_assets', '>= 1.6.0'
 gem 'high_voltage'
 gem 'simple_form'
 gem 'will_paginate'
